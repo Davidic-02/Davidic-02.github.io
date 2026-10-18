@@ -96,7 +96,7 @@
   if (page === "certifications") {
     root.append(h("h1", {}, "Certifications"),
       h("p", { class: "lead" }, "Professional development in healthcare AI, clinical data and research practice."));
-    const search = h("input", { type: "search", placeholder: "Search by title or organisation", "aria-label": "Search certifications" });
+    const search = h("input", { type: "search", placeholder: "Search certifications", "aria-label": "Search certifications" });
     let active = "All";
     const chipRow = h("div", { class: "chips" });
     const list = h("div", {});
