@@ -35,9 +35,14 @@
       h("nav", { "aria-label": "Main" }, pages.map(([href, label]) =>
         h("a", { href, "aria-current": href === current ? "page" : false }, label)))))
   );
+  const c0 = S.contact;
+  const flinks = [["LinkedIn", c0.linkedin], ["GitHub", c0.github], ["ORCID", c0.orcid], ["Email", c0.email && "mailto:" + c0.email]]
+    .filter((l) => l[1]).map(([t, u]) => h("a", { href: u, target: u.startsWith("mailto") ? false : "_blank", rel: "noopener" }, t));
+  document.body.prepend(h("a", { class: "skip", href: "#app" }, "Skip to content"));
   document.body.append(
     h("footer", { class: "site" }, h("div", { class: "wrap" },
-      `© ${new Date().getFullYear()} ${S.person.name}. Credentials are listed with a verification link only where one has been confirmed.`))
+      h("span", {}, `© ${new Date().getFullYear()} ${S.person.name}. Credentials link to verification only where confirmed.`),
+      h("span", {}, flinks)))
   );
 
   const root = document.getElementById("app");
@@ -53,7 +58,9 @@
     if (c.file) links.push(h("a", { href: c.file, target: "_blank", rel: "noopener" }, "View certificate"));
     const badge = c.status === "completed" ? h("span", { class: "badge" }, "Completed")
       : h("span", { class: "badge wait" }, c.status === "in-progress" ? "In progress" : "Planned");
-    return h("article", { class: "card" }, badge, h("h3", {}, c.title), h("p", { class: "org" }, c.org),
+    const isImg = /\.(png|jpe?g|webp)$/i.test(c.file || "");
+    return h("article", { class: "card" + (c.status === "completed" ? "" : " pending") },
+      isImg && h("img", { class: "thumb", src: c.file, alt: `Certificate: ${c.title}`, loading: "lazy" }), badge, h("h3", {}, c.title), h("p", { class: "org" }, c.org),
       c.note && h("p", { class: "note" }, c.note),
       h("p", { class: "meta" }, [c.type, c.date && fmtDate(c.date)].filter(Boolean).join(" · ")),
       links.length ? h("div", { class: "links" }, links) : null);
@@ -61,14 +68,25 @@
 
   // ---------- pages ----------
   if (page === "home") {
-    const actions = h("div", { class: "actions" },
-      h("a", { class: "btn", href: "certifications.html" }, "View certifications"),
-      h("a", { class: "btn ghost", href: "research.html" }, "Research"),
-      S.person.cvUrl && h("a", { class: "btn ghost", href: S.person.cvUrl }, "Download CV (PDF)"));
+    const done = S.certifications.filter((c) => c.status === "completed").length;
+    const stats = [[done, "Completed certifications"], [S.publications.filter((p) => p.state === "accepted").length, "Accepted paper"],
+      [S.peerReview.length, "Peer-review role"], ["4.30", "CGPA out of 5.00"]];
+    const art = h("div", {});
+    art.innerHTML = `<svg viewBox="0 0 320 300" role="img" aria-label="Network nodes joined to a heartbeat line" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="160" cy="150" r="118" opacity=".12" fill="currentColor" stroke="none"/>
+      <g opacity=".55"><path d="M60 90 L130 60 L210 85 L265 55"/><path d="M60 90 L90 170 L160 130 L210 85"/><path d="M90 170 L140 235 L215 205 L160 130"/><path d="M215 205 L270 160 L210 85"/></g>
+      <g fill="var(--surface)"><circle cx="60" cy="90" r="7"/><circle cx="130" cy="60" r="7"/><circle cx="210" cy="85" r="7"/><circle cx="265" cy="55" r="7"/><circle cx="90" cy="170" r="7"/><circle cx="160" cy="130" r="7"/><circle cx="140" cy="235" r="7"/><circle cx="215" cy="205" r="7"/><circle cx="270" cy="160" r="7"/></g>
+      <path d="M30 262 H110 L124 238 L146 284 L166 250 L178 262 H290" stroke-width="3"/></svg>`;
     root.append(
-      h("p", { class: "eyebrow" }, "AI and machine learning for healthcare"),
-      h("h1", {}, S.person.name), h("p", { class: "lead" }, S.person.tagline + "."),
-      h("p", {}, S.person.intro), actions,
+      h("section", { class: "hero" },
+        h("div", {}, h("p", { class: "eyebrow" }, "AI and machine learning for healthcare"),
+          h("h1", {}, S.person.name), h("p", { class: "lead" }, S.person.tagline + "."), h("p", {}, S.person.intro),
+          h("div", { class: "actions" },
+            h("a", { class: "btn", href: "certifications.html" }, "View certifications"),
+            h("a", { class: "btn ghost", href: "research.html" }, "Research"),
+            S.person.cvUrl && h("a", { class: "btn ghost", href: S.person.cvUrl }, "Download CV (PDF)"))),
+        art.firstElementChild),
+      h("div", { class: "stats" }, stats.map(([n, l]) => h("div", { class: "stat" }, h("b", {}, String(n)), h("span", {}, l)))),
       section("Research interests", chips(S.interests)),
       section("Education", ...S.education.map((e) => h("div", { class: "card" },
         h("h3", {}, e.title), h("p", { class: "org" }, e.org), h("p", { class: "note" }, e.detail)))),
@@ -145,5 +163,11 @@
       rows.length ? h("div", { class: "stack" }, rows.map(([l, href, text]) =>
         h("div", { class: "card" }, h("h3", {}, l), h("a", { href }, text))))
         : h("p", { class: "empty" }, "Contact details will be added shortly."));
+  }
+
+  if (page && page !== "home") {
+    const h1 = root.querySelector("h1"), lead = root.querySelector(".lead");
+    const head = h("div", { class: "page-head" }, h("div", { class: "wrap" }, h1, lead));
+    root.parentElement.parentElement.insertBefore(head, root.parentElement);
   }
 })();
