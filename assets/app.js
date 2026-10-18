@@ -60,7 +60,8 @@
       : h("span", { class: "badge wait" }, c.status === "in-progress" ? "In progress" : "Planned");
     const isImg = !!c.image;
     return h("article", { class: "card" + (c.status === "completed" ? "" : " pending") },
-      isImg && h("img", { class: "thumb", src: c.image, alt: `Certificate: ${c.title}`, loading: "lazy" }), badge, h("h3", {}, c.title), h("p", { class: "org" }, c.org),
+      isImg && h("a", { href: c.file || c.image, target: "_blank", rel: "noopener", "aria-label": `Open certificate: ${c.title}` },
+        h("img", { class: "thumb", src: c.image, alt: `Certificate: ${c.title}`, loading: "lazy" })), badge, h("h3", {}, c.title), h("p", { class: "org" }, c.org),
       c.note && h("p", { class: "note" }, c.note),
       h("p", { class: "meta" }, [c.type, c.date && fmtDate(c.date)].filter(Boolean).join(" · ")),
       links.length ? h("div", { class: "links" }, links) : null);
