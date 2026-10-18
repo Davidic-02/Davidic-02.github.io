@@ -96,14 +96,14 @@ window.SITE = {
       org: "Global Health Training Centre",
       category: "Healthcare AI, Clinical Data and Research",
       type: "Course certificate",
-      status: "completed", date: "2026-09-30", url: "", file: "", image: "",
+      status: "completed", date: "2026-09-30", url: "", file: "certificates/ghtc-ich-gcp-e6r3.pdf", image: "certificates/ghtc-ich-gcp-e6r3.jpg",
     },
     {
       title: "Introduction to Clinical Research",
       org: "Global Health Training Centre",
       category: "Healthcare AI, Clinical Data and Research",
       type: "E-learning course certificate",
-      status: "completed", date: "2026-09-22", url: "", file: "", image: "",
+      status: "completed", date: "2026-09-22", url: "", file: "certificates/ghtc-intro-clinical-research.pdf", image: "certificates/ghtc-intro-clinical-research.jpg",
     },
     {
       title: "Research Design",
