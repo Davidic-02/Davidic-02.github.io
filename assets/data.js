@@ -5,7 +5,8 @@
  *   status: "completed" | "in-progress" | "planned"
  *   date:   "YYYY-MM-DD" or "YYYY-MM" or "" (leave empty if unconfirmed; nothing is shown)
  *   url:    ONLY a link you have personally opened and verified. Leave "" otherwise.
- *   file:   optional path to a certificate PDF placed in /certificates (leave "" to hide)
+ *   image:  optional preview picture in /certificates (.jpg/.png)
+ *   file:   optional certificate PDF in /certificates (leave "" to hide)
  */
 window.SITE = {
   person: {
@@ -45,49 +46,63 @@ window.SITE = {
       org: "Stanford Online / Coursera",
       category: "Healthcare AI, Clinical Data and Research",
       type: "Course certificate",
-      status: "completed", date: "", url: "", file: "",
+      status: "completed", date: "2026-10-14", url: "https://www.coursera.org/account/accomplishments/verify/ZE07T3QYWJG6", file: "certificates/stanford-intro-healthcare.pdf", image: "certificates/stanford-intro-healthcare.jpg",
     },
     {
       title: "Introduction to Clinical Data",
       org: "Stanford Online / Coursera",
       category: "Healthcare AI, Clinical Data and Research",
       type: "Course certificate",
-      status: "completed", date: "", url: "", file: "",
+      status: "completed", date: "2026-10-17", url: "https://www.coursera.org/account/accomplishments/verify/ENY7Q03EHM54", file: "certificates/stanford-intro-clinical-data.pdf", image: "certificates/stanford-intro-clinical-data.jpg",
     },
     {
       title: "AI in Healthcare Specialization",
       org: "Stanford Online / Coursera",
       category: "Healthcare AI, Clinical Data and Research",
       type: "Specialization certificate",
-      status: "completed", date: "", url: "", file: "",
+      status: "completed", date: "", url: "", file: "", image: "",
+    },
+    {
+      title: "How to Identify Research Gaps",
+      org: "Elsevier Researcher Academy",
+      category: "Healthcare AI, Clinical Data and Research",
+      type: "Course certificate",
+      status: "completed", date: "2026-09-01", url: "", file: "certificates/elsevier-identify-research-gaps.pdf", image: "certificates/elsevier-identify-research-gaps.jpg",
     },
     {
       title: "Ethical AI in Research",
       org: "Elsevier Researcher Academy",
       category: "Healthcare AI, Clinical Data and Research",
       type: "Course certificate",
-      status: "completed", date: "2026-09-01", url: "", file: "",
+      status: "completed", date: "2026-09-01", url: "", file: "certificates/elsevier-ethical-ai-in-research.pdf", image: "certificates/elsevier-ethical-ai-in-research.jpg",
     },
     {
       title: "Health Data Standards and Terminologies",
       org: "National Network of Libraries of Medicine (NNLM) / Medical Library Association (MLA)",
       category: "Healthcare AI, Clinical Data and Research",
       type: "Certificate of participation and MLA continuing-education certificate (2.5 MLA CE credits)",
-      status: "completed", date: "", url: "", file: "",
+      status: "completed", date: "2026-09-23", url: "", file: "certificates/mla-health-data-standards.pdf", image: "certificates/mla-health-data-standards.jpg",
     },
     {
       title: "Good Practices for Clinical Trial Design and Implementation",
       org: "WHO Academy",
       category: "Healthcare AI, Clinical Data and Research",
       type: "Course certificate",
-      status: "completed", date: "2026-10-10", url: "", file: "",
+      status: "completed", date: "2026-10-10", url: "", file: "certificates/who-clinical-trial-design.pdf", image: "certificates/who-clinical-trial-design.jpg",
     },
     {
       title: "ICH Good Clinical Practice E6(R3)",
       org: "Global Health Training Centre",
       category: "Healthcare AI, Clinical Data and Research",
       type: "Course certificate",
-      status: "completed", date: "", url: "", file: "",
+      status: "completed", date: "2026-09-30", url: "", file: "", image: "",
+    },
+    {
+      title: "Introduction to Clinical Research",
+      org: "Global Health Training Centre",
+      category: "Healthcare AI, Clinical Data and Research",
+      type: "E-learning course certificate",
+      status: "completed", date: "2026-09-22", url: "", file: "", image: "",
     },
     {
       title: "Recognised Reviewer Certificate",
@@ -95,7 +110,7 @@ window.SITE = {
       category: "Research Service and Peer Review",
       type: "Reviewer recognition",
       note: "Awarded for a completed peer review for Biomedical Signal Processing and Control.",
-      status: "completed", date: "2026-09-22", url: "", file: "",
+      status: "completed", date: "2026-09-22", url: "", file: "certificates/bspc-recognised-reviewer.pdf", image: "certificates/bspc-recognised-reviewer.jpg",
     },
     // ---- Ongoing learning (shown separately, never as completed) ----
     {
@@ -103,14 +118,14 @@ window.SITE = {
       org: "Stanford Online / Coursera",
       category: "Healthcare AI, Clinical Data and Research",
       type: "Course",
-      status: "in-progress", date: "", url: "", file: "",
+      status: "in-progress", date: "", url: "", file: "", image: "",
     },
     {
       title: "Elements of AI: Introduction to AI",
       org: "University of Helsinki / MinnaLearn",
       category: "Additional Professional Development",
       type: "Course",
-      status: "in-progress", date: "", url: "", file: "",
+      status: "in-progress", date: "", url: "", file: "", image: "",
     },
   ],
 
