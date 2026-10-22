@@ -1,19 +1,11 @@
 :root {
-  --bg: #f6f9fb; --surface: #ffffff; --ink: #0f1c2b; --muted: #587084;
-  --line: #dfe7ee; --navy: #0f3556; --teal: #0b7a85; --teal-soft: #e4f4f5;
-  --amber: #8a5a00; --amber-soft: #fbf0d9; --on-accent: #ffffff;
-  --shadow: 0 1px 2px rgba(15,53,86,.06), 0 4px 16px rgba(15,53,86,.05);
+  --bg: #ffffff; --surface: #ffffff; --ink: #111111; --muted: #5c5c5c;
+  --line: #dcdcdc; --navy: #000000; --teal: #000000; --teal-soft: #f2f2f2;
+  --amber: #333333; --amber-soft: #ebebeb; --on-accent: #ffffff;
+  --shadow: 0 1px 2px rgba(0,0,0,.05), 0 4px 16px rgba(0,0,0,.04);
   --radius: 12px;
   --serif: "Fraunces", Georgia, "Times New Roman", serif;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b141d; --surface: #131f2b; --ink: #e7eef5; --muted: #9db0c1;
-    --line: #243548; --navy: #9cc4ee; --teal: #4fc3cd; --teal-soft: #11343a;
-    --amber: #f0c36a; --amber-soft: #38300f; --on-accent: #0b141d;
-    --shadow: none;
-  }
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
@@ -45,13 +37,13 @@ p { margin: 0 0 12px; }
 .eyebrow { color: var(--teal); font: 600 .8rem var(--sans); letter-spacing: .12em; text-transform: uppercase; margin: 0 0 12px; }
 
 /* page head */
-.page-head { background: linear-gradient(180deg, var(--teal-soft), transparent); border-bottom: 1px solid var(--line); padding: 48px 0 36px; margin-bottom: 8px; }
+.page-head { background: var(--teal-soft); border-bottom: 1px solid var(--line); padding: 48px 0 36px; margin-bottom: 8px; }
 .page-head h1 { margin-bottom: 8px; }
 .page-head .lead { margin: 0; }
 
 /* hero */
 .hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; padding: 64px 0 24px; }
-.hero svg { width: 100%; height: auto; max-width: 380px; justify-self: center; color: var(--teal); }
+.hero svg { width: 100%; height: auto; max-width: 380px; justify-self: center; color: #000; }
 .hero .lead { margin-bottom: 14px; }
 
 /* buttons */
