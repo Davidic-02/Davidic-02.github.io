@@ -68,7 +68,7 @@ window.SITE = {
       org: "Stanford Online / Coursera",
       category: "Healthcare AI, Clinical Data and Research",
       type: "Specialization certificate",
-      status: "completed", date: "", url: "", file: "", image: "",
+      status: "in-progress", date: "", url: "", file: "", image: "",
     },
     {
       title: "How to Identify Research Gaps",
