@@ -70,7 +70,7 @@
   // ---------- pages ----------
   if (page === "home") {
     const done = S.certifications.filter((c) => c.status === "completed").length;
-    const stats = [[done, "Completed certifications"], [S.publications.filter((p) => p.state === "accepted").length, "Accepted paper"],
+    const stats = [[done, "Completed certifications"], [S.publications.filter((p) => p.state === "published").length, "Published paper"],
       [S.peerReview.length, "Peer-review role"], ["4.30", "CGPA out of 5.00"]];
     const art = h("div", {});
     art.innerHTML = `<svg viewBox="0 0 320 300" role="img" aria-label="Network nodes joined to a heartbeat line" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -89,6 +89,7 @@
         art.firstElementChild),
       h("div", { class: "stats" }, stats.map(([n, l]) => h("div", { class: "stat" }, h("b", {}, String(n)), h("span", {}, l)))),
       section("Research interests", chips(S.interests)),
+      section("Skills", chips(S.skills)),
       section("Education", ...S.education.map((e) => h("div", { class: "card" },
         h("h3", {}, e.title), h("p", { class: "org" }, e.org), h("p", { class: "note" }, e.detail)))),
       section("Looking ahead", h("p", {}, "I am preparing applications for funded, research-based MSc programmes in computer science, artificial intelligence, machine learning and health informatics for 2027 entry.")));
@@ -129,9 +130,9 @@
   }
 
   if (page === "publications") {
-    const groups = [["accepted", "Accepted"], ["review", "Under review"], ["draft", "In preparation"]];
+    const groups = [["published", "Published"], ["review", "Under peer review"], ["submitted", "Submitted"], ["draft", "In preparation"]];
     root.append(h("h1", {}, "Publications and Peer Review"),
-      h("p", { class: "lead" }, "Accepted work is kept separate from manuscripts under review and drafts."));
+      h("p", { class: "lead" }, "Published work is kept separate from manuscripts under review, submissions and drafts."));
     groups.forEach(([k, label]) => {
       const items = S.publications.filter((p) => p.state === k);
       if (!items.length) return;
@@ -145,7 +146,7 @@
 
   if (page === "experience") {
     root.append(h("h1", {}, "Experience and Advocacy"));
-    [["Research", "Research"], ["Work", "Internships"], ["Advocacy", "Advocacy and community"]].forEach(([g, label]) => {
+    [["Research", "Research"], ["Work", "Work and internships"], ["Service", "Mentoring and service"], ["Advocacy", "Advocacy and community"]].forEach(([g, label]) => {
       const items = S.experience.filter((e) => e.group === g);
       if (!items.length) return;
       root.append(section(label, h("div", { class: "stack" }, items.map((e) => h("article", { class: "card" },

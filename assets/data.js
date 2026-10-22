@@ -13,7 +13,7 @@ window.SITE = {
     name: "David O. Adekoya",
     tagline: "Computing graduate developing into a healthcare-AI researcher",
     intro:
-      "I build and evaluate machine-learning systems for clinical settings, with a focus on whether they stay reliable outside the data they were trained on. My work covers maternal risk prediction, medical imaging and sickle cell disease in resource-constrained health systems.",
+      "Research-focused graduate with experience supporting academic research, preparing manuscripts and documenting healthcare AI studies. I work on maternal risk prediction, medical imaging and explainable clinical AI, with attention to accurate citations, clear records and compliance with journal requirements.",
     cvUrl: "", // e.g. "assets/David-Adekoya-CV.pdf" once you add the PDF
   },
 
@@ -30,8 +30,15 @@ window.SITE = {
     {
       title: "B.Tech. Information Technology",
       org: "Federal University of Technology, Akure (FUTA), Nigeria",
-      detail: "CGPA 4.30/5.00, Second Class Upper Division. Final examinations completed August 2026.",
+      detail: "2021 to 2026. CGPA 4.30/5.00. Degree status: awaiting official confirmation of final result. Coursework: Artificial Intelligence, Statistics, Data Structures and Algorithms, Database Systems, Software Engineering, Computer Networks, Numerical Analysis, Data Analysis.",
     },
+  ],
+
+  skills: [
+    "Manuscript preparation and proofreading",
+    "Revision tracking and journal-guideline checks",
+    "Research documentation and literature review",
+    "Python, Git/GitHub, Microsoft Word",
   ],
 
   categories: [
@@ -188,19 +195,35 @@ window.SITE = {
 
   research: [
     {
-      title: "Explainable AI-Based Maternal Triage Decision-Support System",
-      status: "Manuscript under review",
+      title: "When Benchmarks Do Not Travel: External Validation of Maternal Risk Prediction Models in Nigeria",
+      status: "Published, 18 October 2026",
       summary:
-        "A research-oriented maternal triage decision-support system combining machine learning, explainability methods and a software application stack. It explores prediction and interpretability for maternal risk assessment.",
+        "Co-authored with R. S. Akinbo. Evaluates model performance and calibration on Nigerian clinical records, reporting external validation and population-shift analyses.",
+      tags: ["External validation", "Calibration", "Maternal health"],
+      links: [{ label: "Read the article", url: "https://faith.futuretechsci.org/index.php/FAITH/article/view/448" }, { label: "DOI", url: "https://doi.org/10.62411/faith.3048-3719-448" }],
+    },
+    {
+      title: "An Explainable Artificial Intelligence Based Maternal Triage Decision-Support System for Primary Health Centers",
+      status: "Under peer review",
+      summary:
+        "An explainable machine-learning triage system integrated into a mobile application for primary health centres.",
       tags: ["Clinical decision support", "Explainable AI", "Maternal health"],
       links: [],
     },
     {
-      title: "When Benchmarks Do Not Travel: External Validation of Maternal Risk Prediction Models in Nigeria",
-      status: "Accepted",
+      title: "A Multi-Agent Multimodal Framework for Childhood Asthma Detection with Cross-Modal Explanation Fusion",
+      status: "Under peer review",
       summary:
-        "Co-authored study of how maternal risk prediction models generalise to data from other settings in Nigeria.",
-      tags: ["External validation", "Generalisation", "Maternal health"],
+        "Co-authored with R. S. Akinbo. Multimodal healthcare AI with model evaluation and explanation assessment.",
+      tags: ["Multimodal AI", "Explainability", "Paediatrics"],
+      links: [],
+    },
+    {
+      title: "Reader selectivity in multi-pathologist cervical cytology annotations: an analysis of RIVA and a negative result for reader-aware correction",
+      status: "Submitted, sole author",
+      summary:
+        "Investigates reader selectivity and disagreement in multi-pathologist cervical cytology annotations, and evaluates whether reader-aware correction improves annotation reliability. Reports a negative result.",
+      tags: ["Medical imaging", "Annotation reliability", "Negative result"],
       links: [],
     },
     {
@@ -221,19 +244,33 @@ window.SITE = {
     },
   ],
 
-  // Publications page groups by `state`: accepted | review | draft
+  // Publications page groups by `state`: published | review | submitted | draft
   publications: [
     {
-      state: "accepted",
+      state: "published",
       title: "When Benchmarks Do Not Travel: External Validation of Maternal Risk Prediction Models in Nigeria",
-      venue: "Journal of Faith-Based and Intercultural Studies (J. FAITH)",
-      note: "Accepted October 2026.",
-      url: "", // add only after the final record is live
+      venue: "Journal of Future Artificial Intelligence and Technologies (FAITH). Co-author with R. S. Akinbo.",
+      note: "Published 18 October 2026. DOI: 10.62411/faith.3048-3719-448",
+      url: "https://doi.org/10.62411/faith.3048-3719-448",
     },
     {
       state: "review",
-      title: "Explainable AI-Based Maternal Triage Decision-Support System",
-      venue: "Manuscript under review",
+      title: "A Multi-Agent Multimodal Framework for Childhood Asthma Detection with Cross-Modal Explanation Fusion",
+      venue: "Under peer review (submitted 2026). Co-author with R. S. Akinbo.",
+      note: "",
+      url: "",
+    },
+    {
+      state: "review",
+      title: "An Explainable Artificial Intelligence Based Maternal Triage Decision-Support System for Primary Health Centers",
+      venue: "Under peer review (submitted 2026). Co-author.",
+      note: "",
+      url: "",
+    },
+    {
+      state: "submitted",
+      title: "Reader selectivity in multi-pathologist cervical cytology annotations: an analysis of RIVA and a negative result for reader-aware correction",
+      venue: "Submitted 2026. Sole author.",
       note: "",
       url: "",
     },
@@ -248,33 +285,61 @@ window.SITE = {
 
   peerReview: [
     {
-      title: "Peer reviewer, Biomedical Signal Processing and Control",
-      org: "Elsevier Reviewer Hub",
-      note: "Recognised Reviewer Certificate issued 22 September 2026.",
+      title: "Invited reviewer, Biomedical Signal Processing and Control",
+      org: "Elsevier",
+      note: "September 2026. Recognised Reviewer Certificate awarded for one completed review.",
     },
   ],
 
   experience: [
     {
       title: "Research Assistant",
-      org: "Federal University of Technology, Akure (supervisor-led research)",
-      period: "January 2026 to present",
-      note: "",
+      org: "Federal University of Technology, Akure (FUTA). Supervisor: Dr. R. S. Akinbo, Department of Data Science",
+      period: "December 2025 to September 2026",
+      note: "Supported healthcare AI research: problem formulation, model development, analysis and manuscript preparation. Drafted and organised research materials for manuscripts, kept methods, results and conclusions consistent, and supported peer and junior students with research methodology, project scoping and technical execution.",
       group: "Research",
     },
     {
-      title: "Intern",
-      org: "Lagos State Ministry of Science and Technology",
-      period: "",
-      note: "",
+      title: "Invited Reviewer",
+      org: "Biomedical Signal Processing and Control (Elsevier)",
+      period: "September 2026",
+      note: "Contributed to scholarly peer review, with exposure to journal review workflows and evidence-based scientific reporting.",
+      group: "Research",
+    },
+    {
+      title: "Head Mobile Engineer",
+      org: "XODOS",
+      period: "May 2026 to present",
+      note: "Maintain technical documentation and coordinate implementation of application features against technical specifications.",
       group: "Work",
     },
     {
-      title: "Intern",
+      title: "Intern, ICT Department",
       org: "Lagos State Ministry of Transportation",
-      period: "",
-      note: "",
+      period: "May 2025 to October 2025",
+      note: "Organised and updated departmental records and spreadsheets, supported data entry and cleaning, and compiled periodic reports. Assisted with routine ICT support, software installation, system maintenance and office network troubleshooting.",
       group: "Work",
+    },
+    {
+      title: "Mentor, undergraduate research",
+      org: "Federal University of Technology, Akure",
+      period: "2026",
+      note: "Mentored undergraduate students on research methodology, project scoping and technical execution.",
+      group: "Service",
+    },
+    {
+      title: "Volunteer",
+      org: "Google Developer Student Club, FUTA",
+      period: "2026",
+      note: "Supported student technical workshops, including Build with AI (April 2026).",
+      group: "Service",
+    },
+    {
+      title: "Attendee, ACAI Conference 2026",
+      org: "American Center for Artificial Intelligence, Obafemi Awolowo University, Ile-Ife",
+      period: "27 August 2026",
+      note: "Artificial Intelligence for National Development workshop (attendance).",
+      group: "Service",
     },
     {
       title: "Sick Cells Ambassador",
@@ -293,7 +358,7 @@ window.SITE = {
   ],
 
   contact: {
-    email: "",    // professional email
+    email: "adekoyadift2020@futa.edu.ng",
     linkedin: "https://www.linkedin.com/in/david-adekoya-91164a373/",
     github: "https://github.com/Davidic-02",
     orcid: "https://orcid.org/0009-0006-2754-1589",
