@@ -314,6 +314,13 @@ window.SITE = {
       group: "Work",
     },
     {
+      title: "Intern",
+      org: "Lagos State Ministry of Science and Technology",
+      period: "",
+      note: "",
+      group: "Work",
+    },
+    {
       title: "Intern, ICT Department",
       org: "Lagos State Ministry of Transportation",
       period: "May 2025 to October 2025",
