@@ -29,10 +29,12 @@
     ["publications.html", "Publications"], ["experience.html", "Experience"], ["contact.html", "Contact"],
   ];
   const current = location.pathname.split("/").pop() || "index.html";
+  const visible = pages.filter(([href]) => !S.visiblePages || S.visiblePages.includes(href));
+  if (visible.length && !visible.some(([href]) => href === current)) { location.replace(visible[0][0]); return; }
   document.body.prepend(
     h("header", { class: "site" }, h("div", { class: "wrap" },
-      h("a", { class: "brand", href: "index.html" }, S.person.name),
-      h("nav", { "aria-label": "Main" }, pages.map(([href, label]) =>
+      h("a", { class: "brand", href: visible[0][0] }, S.person.name),
+      h("nav", { "aria-label": "Main" }, visible.map(([href, label]) =>
         h("a", { href, "aria-current": href === current ? "page" : false }, label)))))
   );
   const c0 = S.contact;

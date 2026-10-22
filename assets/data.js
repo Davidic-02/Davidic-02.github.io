@@ -9,6 +9,10 @@
  *   file:   optional certificate PDF in /certificates (leave "" to hide)
  */
 window.SITE = {
+  // Pages shown in the menu. Any page not listed redirects to the first one.
+  // Full set: index, certifications, research, publications, experience, contact (.html)
+  visiblePages: ["certifications.html", "research.html"],
+
   person: {
     name: "David O. Adekoya",
     tagline: "Computing graduate developing into a healthcare-AI researcher",
