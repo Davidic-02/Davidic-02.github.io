@@ -7,6 +7,16 @@
   --serif: "Fraunces", Georgia, "Times New Roman", serif;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000; --surface: #000000; --ink: #f5f5f5; --muted: #a8a8a8;
+    --line: #333333; --navy: #ffffff; --teal: #ffffff; --teal-soft: #141414;
+    --amber: #cfcfcf; --amber-soft: #1c1c1c; --on-accent: #000000;
+    --shadow: none;
+  }
+  .hero svg { color: #fff; }
+  .card .thumb { background: #fff; }
+}
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.7 var(--sans); -webkit-font-smoothing: antialiased; }
